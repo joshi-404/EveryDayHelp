@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+html,body{
+	
+	min-height: 100Vh;
+	display: flex;
+	flex-direction: column;
+	background-color: beige;
+	
+}
+
+.main-body{
+	
+	flex:1
+}

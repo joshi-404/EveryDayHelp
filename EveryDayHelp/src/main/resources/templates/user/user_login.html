@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}">User Login</title>
+
+<th:block th:replace="~{/fragments/commonCSS::commonCSS1}"></th:block>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .main-body {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-box {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .login-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login-box label {
+        font-weight: 500;
+    }
+
+    .login-box input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    .login-box button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .login-box .msg {
+        color: green;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<th:block th:replace="~{/fragments/header::headerFragment}"></th:block>
+
+<div class="main-body">
+    <div class="login-box">
+        <div class="msg" th:if="${msg}" th:text="${msg}"></div>
+        <h2>User Login</h2>
+
+        <form action="/user_login" method="post">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+
+<div th:replace="~{/fragments/footer::footerFragment}"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

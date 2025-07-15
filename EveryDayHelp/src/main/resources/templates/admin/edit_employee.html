@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            padding: 40px;
+        }
+
+        .form-box {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<th:block th:replace="~{/fragments/admin_header::adminheaderFragment}"></th:block>
+
+<div class="main-body">
+    <div class="form-box">
+        <h2>Edit Employee Info</h2>
+
+        <form th:action="@{/admin/editEmployee}" method="post" th:object="${employee}">
+            <input type="hidden" th:field="*{employeeId}" />
+
+            <div class="mb-3">
+                <label class="form-label">Phone</label>
+                <input type="text" th:field="*{phone}" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Qualification</label>
+                <input type="text" th:field="*{qualification}" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Experience</label>
+                <input type="text" th:field="*{experience}" class="form-control" required />
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success">Update</button>
+                <a th:href="@{/admin/allEmployees}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div th:replace="~{/fragments/footer::footerFragment}"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

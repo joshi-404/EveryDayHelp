@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}">About Us</title>
+
+<th:block th:replace="~{/fragments/commonCSS::commonCSS1}"></th:block>
+
+<style>
+    .about-box {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 30px;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        background-color: #f8f9fa;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+</style>
+
+</head>
+<body>
+
+<div th:replace="~{/fragments/header::headerFragment}"></div>
+
+<div class="main-body">
+    <div class="about-box">
+        <h2 class="text-center mb-4">About Us</h2>
+        <p>
+            Welcome to <strong>EveryDayHelp</strong> — your trusted companion for managing life’s everyday needs with ease, reliability, and care.
+        </p>
+        <p>
+            We understand that in today’s fast-paced world, even small daily tasks can become overwhelming. Whether it’s finding a reliable electrician, booking a cleaning service, hiring a personal tutor, or getting your gadgets repaired — EveryDayHelp is here to make your life simpler. Our platform connects users with a wide network of skilled and verified service providers across a range of essential categories, ensuring that quality help is just a click away.
+        </p>
+        <p>
+            Built with the vision of creating a seamless, accessible support system for all, EveryDayHelp allows users to browse, book, and manage essential services from the comfort of their home. Our intuitive interface and secure system ensure that booking services is quick, transparent, and stress-free. You can also track your bookings, view service history, and communicate directly with service providers — all in one place.
+        </p>
+        <p>
+            What sets us apart is our commitment to trust, quality, and customer satisfaction. Every professional on our platform goes through a strict verification process so that users can book with confidence. Our customer support is always ready to assist you, ensuring a smooth experience from start to finish.
+        </p>
+        <p>
+            At EveryDayHelp, we are more than just a service platform — we are a helping hand in your everyday life. Because we believe that life gets better when help is easy, reliable, and always within reach.
+        </p>
+    </div>
+</div>
+
+<div th:replace="~{/fragments/footer::footerFragment}"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
